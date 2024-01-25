@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos de Desenvolvimento Web</title>
+</head>
+<body>
+    <header>
+        <h1>Bem-vindo aos Cursos de Desenvolvimento Web</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Cursos</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2>Explore nossos cursos</h2>
+            <p>Aqui você encontrará uma variedade de cursos de desenvolvimento web para aprimorar suas habilidades.</p>
+                {% if latest_question_list %}
+                <ul>
+                    {% for question in latest_question_list %}
+                        <li><a href="/courses/{{ course.id }}/">{{ curso.question_text }}</a></li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                    <p>No polls are available.</p>
+                {% endif %}
+
+        </section>
+
+        <section>
+            <h2>Por que escolher nossos cursos?</h2>
+            <p>Nossos cursos são ministrados por profissionais experientes e abrangem uma ampla gama de tópicos, desde HTML e CSS até frameworks populares como Django e React.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2022 Cursos de Desenvolvimento Web. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>
